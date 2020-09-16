@@ -1,0 +1,87 @@
+:root {
+	--main: #4995fa;
+	--darker: #224aa5;
+	--lighter: #9dc8f9;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--lighter);
+	font-family: sans-serif;
+}
+
+@keyframes lighten {
+	100% {
+		color: var(--darker);
+		background-color: var(--lighter);
+	}
+}
+
+@keyframes darken {
+	100% {
+		color: white;
+		background-color: var(--darker);
+	}
+}
+
+@keyframes highlight {
+	100% {
+		box-shadow: 0px 0px 10px;
+	}
+}
+
+.nav {
+	background-color: var(--darker);
+	padding: 10px 20px 10px 20px;
+}
+
+.navLink {
+	background-color: var(--darker);
+	color: white;
+	text-decoration:none;
+	font-weight: bold;
+	font-size: 200%;
+	padding: 5px 20px 5px 20px;
+	border-radius: 10px;
+}
+
+a.navLink:hover {
+	animation-name: lighten;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.block {
+	box-shadow: 0px 0px 5px;
+	background-color: white;
+	color: var(--darker);
+	padding: 15px 10px 10px 10px;
+	margin: 30px 30px 0px 30px;
+	border-radius: 20px;
+	overflow:auto;
+}
+
+.block:hover {
+	animation-name: highlight;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+
+.blockName {
+	display: inline
+	width: auto;
+	font-size: 200%;
+	padding: 5px;
+	margin: 0px;
+	background-color: var(--main);
+	color: white;
+	border-radius: 10px;
+	text-decoration:none;
+}
+
+a.blockName:hover {
+	animation-name: darken;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
