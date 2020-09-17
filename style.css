@@ -69,7 +69,7 @@ a.navLink:hover {
 }
 
 .blockName {
-	display: inline
+	display: inline;
 	width: auto;
 	font-size: 200%;
 	padding: 5px;
