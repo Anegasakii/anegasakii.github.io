@@ -2,13 +2,14 @@
 	--main: #4995fa;
 	--darker: #224aa5;
 	--lighter: #9dc8f9;
+	scroll-behavior: smooth;
+	scroll-padding-top: 88px;
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
+body {
 	background-color: var(--lighter);
 	font-family: sans-serif;
+	margin: 88px 0px;
 }
 
 @keyframes lighten {
@@ -32,8 +33,11 @@ html, body {
 }
 
 .nav {
+	position: fixed;
 	background-color: var(--darker);
-	padding: 10px 20px 10px 20px;
+	width: 100%;
+	padding: 10px 20px;
+	top: 0;
 }
 
 .navLink {
@@ -42,7 +46,8 @@ html, body {
 	text-decoration:none;
 	font-weight: bold;
 	font-size: 200%;
-	padding: 5px 20px 5px 20px;
+	padding: 5px 20px;
+	margin: 5px;
 	border-radius: 10px;
 }
 
@@ -52,27 +57,42 @@ a.navLink:hover {
 	animation-fill-mode: forwards;
 }
 
-.block {
+.block, .block2 {
+	width: 60%;
 	box-shadow: 0px 0px 5px;
 	background-color: white;
 	color: var(--darker);
 	padding: 15px 10px 10px 10px;
-	margin: 30px 30px 0px 30px;
+	margin: 30px auto 0px;
 	border-radius: 20px;
 	overflow:auto;
 }
 
-.block:hover {
+.block2 {
+	background-color: var(--darker);
+	color: white;
+}
+
+.block2 .block {
+	color: white;
+	width: 80%;
+}
+
+.block p {
+	color: var(--darker);
+}
+
+.block:hover, .block2:hover {
 	animation-name: highlight;
 	animation-duration: 0.25s;
 	animation-fill-mode: forwards;
 }
 
-.blockName {
+p.blockName, a.blockName, .blockName2 {
 	display: inline;
 	width: auto;
 	font-size: 200%;
-	padding: 5px;
+	padding: 5px 10px;
 	margin: 0px;
 	background-color: var(--main);
 	color: white;
@@ -80,8 +100,43 @@ a.navLink:hover {
 	text-decoration:none;
 }
 
-a.blockName:hover {
+a.blockName:hover, .jumpLink:hover, .jumpLink2:hover {
 	animation-name: darken;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
+}
+
+a.blockName2:hover {
+	animation-name: lighten;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+img {
+	display: block;
+	height: 250px;
+	margin: 0px auto;
+}
+
+.jump {
+	position: fixed;
+	left: -10px;
+	background-color: var(--main);
+	border-radius: 10px;
+}
+
+.jumpLink, .jumpLink2 {
+	display: block;
+	text-decoration: none;
+	padding: 5px;
+	font-size: 120%;
+	color: white;
+	margin: 5px 15px;
+	border-radius: 5px;
+}
+
+.jumpLink2 {
+	font-weight: bold;
+	font-size: 80%;
+	margin: 5px 15px 5px 50px;
 }
