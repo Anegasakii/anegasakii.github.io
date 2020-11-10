@@ -100,7 +100,7 @@ p.blockName, a.blockName, .blockName2 {
 	text-decoration:none;
 }
 
-a.blockName:hover, .jumpLink:hover, .jumpLink2:hover {
+a.blockName:hover, .jumpLink:hover, .jumpLink2:hover, .jumpHide:hover {
 	animation-name: darken;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
@@ -176,10 +176,6 @@ img {
 .jumpHide img {
 	height: 50px;
 	margin: auto;
-}
-
-.jumpHide:hover {
-	background-color: var(--darker);
 }
 
 .jumpHidden {
