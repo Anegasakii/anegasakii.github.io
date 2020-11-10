@@ -119,10 +119,17 @@ img {
 }
 
 .jump {
+	z-index: 1;
 	position: fixed;
 	left: -10px;
+	top: 88px;
 	background-color: var(--main);
 	border-radius: 10px;
+	transition:         all 0.5s ease;
+    -moz-transition:    all 0.5s ease;
+    -ms-transition:     all 0.5s ease;
+    -o-transition:      all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .jumpLink, .jumpLink2 {
@@ -139,4 +146,48 @@ img {
 	font-weight: bold;
 	font-size: 80%;
 	margin: 5px 15px 5px 50px;
+}
+
+.jumpHide {
+	z-index: 2;
+	position: fixed;
+	left: 300px;
+	display: block;
+	background-color: var(--main);
+	border: none;
+	height: 60px;
+	border-radius:10px;
+	transition:         all 0.5s ease;
+    -moz-transition:    all 0.5s ease;
+    -ms-transition:     all 0.5s ease;
+    -o-transition:      all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.jumpHidden .jumpHide {
+	left: -10px;
+	transition:         all 0.5s ease;
+    -moz-transition:    all 0.5s ease;
+    -ms-transition:     all 0.5s ease;
+    -o-transition:      all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.jumpHide img {
+	height: 50px;
+	margin: auto;
+}
+
+.jumpHide:hover {
+	background-color: var(--darker);
+}
+
+.jumpHidden {
+	position: fixed;
+	left: -400px;
+	transition:         all 0.5s ease;
+    -moz-transition:    all 0.5s ease;
+    -ms-transition:     all 0.5s ease;
+    -o-transition:      all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }

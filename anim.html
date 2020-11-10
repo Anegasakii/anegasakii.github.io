@@ -14,7 +14,8 @@
 		<a class="navLink" href="anim.html">Animations</a>
 	</div>
 
-	<div class="jump">
+	<div class="jumpHidden" id="jump">
+		<button onclick="toggle()" class="jumpHide"><img src="up-down.svg"></button>
 		<a class="jumpLink" href="#lonkBirb">Lonk w/ Birb</a>
 		<a class="jumpLink" href="#bean">Among Us Bean Walk</a>
 		<a class="jumpLink" href="#exercises">Animator Island's Exercises</a>
@@ -84,5 +85,18 @@
 			<img src="animations\09-sack-jumping.gif">
 		</div>
 	</div>
+<script>
+	function toggle(){
+		jump = document.getElementById("jump")
+		switch(jump.className){
+		 case "jump":
+			jump.className = "jumpHidden";
+			break
+		case "jumpHidden":
+			jump.className = "jump";
+			break
+		}
+	}
+</script>
 </body>
 </html>
