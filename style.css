@@ -1,15 +1,15 @@
+@import "base.css";
+
 :root {
-	--main: #4995fa;
-	--darker: #2238A5;
-	--lighter: #A8CFFF;
 	scroll-behavior: smooth;
 	scroll-padding-top: 88px;
 }
 
 body {
-	background-color: var(--lighter);
+	background-color: var(--main);
 	font-family: Questrial, sans-serif;
 	margin: 88px 0px;
+	padding: 0;
 }
 
 @keyframes lighten {
@@ -60,7 +60,7 @@ a.navLink:hover {
 .block, .block2 {
 	width: 60%;
 	box-shadow: 0px 0px 5px;
-	background-color: white;
+	background-color: var(--lighter);
 	color: var(--darker);
 	padding: 15px 10px 10px 10px;
 	margin: 30px auto 0px;
@@ -78,17 +78,13 @@ a.navLink:hover {
 	width: 80%;
 }
 
-.block p {
-	color: var(--darker);
-}
-
 .block:hover, .block2:hover {
 	animation-name: highlight;
 	animation-duration: 0.25s;
 	animation-fill-mode: forwards;
 }
 
-p.blockName, a.blockName, .blockName2 {
+.blockName, .blockName2 {
 	display: inline;
 	width: auto;
 	font-size: 200%;
@@ -100,13 +96,13 @@ p.blockName, a.blockName, .blockName2 {
 	text-decoration:none;
 }
 
-a.blockName:hover, .jumpLink:hover, .jumpLink2:hover, .jumpHide:hover {
+a.blockName:hover {
 	animation-name: darken;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
 
-a.blockName2:hover {
+a.blockName2:hover, .jumpLink:hover, .jumpLink2:hover, .jumpHide:hover {
 	animation-name: lighten;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
@@ -123,7 +119,7 @@ img {
 	position: fixed;
 	left: -10px;
 	top: 88px;
-	background-color: var(--main);
+	background-color: var(--darker);
 	border-radius: 10px;
 	transition:         all 0.5s ease;
     -moz-transition:    all 0.5s ease;
@@ -143,7 +139,6 @@ img {
 }
 
 .jumpLink2 {
-	font-weight: bold;
 	font-size: 80%;
 	margin: 5px 15px 5px 50px;
 }
@@ -153,7 +148,7 @@ img {
 	position: fixed;
 	left: 300px;
 	display: block;
-	background-color: var(--main);
+	background-color: var(--darker);
 	border: none;
 	height: 60px;
 	border-radius:10px;
