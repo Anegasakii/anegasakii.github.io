@@ -1,7 +1,8 @@
 :root {
-	--main: #4995fa;
-	--darker: #0013AB;
-	--lighter: #A8CFFF;
+	--main: #4b85fa;
+	--darker: #1D33D7;
+	--lighter: #A8C8FF;
+	--darkest: #0A122A;
 }
 
 html {
@@ -10,8 +11,44 @@ html {
 
 body {
 	background-color: var(--lighter);
+    color: var(--darkest);
 	font-family: Questrial, sans-serif;
 	margin: 5vh 5vw;
 	padding: 2vh 4vw;
 	border-radius: 20px;
+}
+
+footer a {
+	font-family:sans-serif;
+	border: none;
+	display: inline;
+	width: auto;
+	font-size: 150%;
+	padding: 7px;
+	margin: 10px;
+	background-color: var(--main);
+	color: white;
+	border-radius: 10px;
+	text-decoration:none;
+}
+
+footer a:hover {
+	animation-name: darken;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes darken {
+	100% {
+		color: white;
+		background-color: var(--darker);
+		transform: scale(1.1);
+	}
+}
+
+@keyframes lighten {
+	100% {
+		color: var(--darker);
+		background-color: var(--lighter);
+	}
 }

@@ -74,7 +74,7 @@ a.navLink:hover {
 }
 
 .block2 .block {
-	color: white;
+	color: var(--darker);
 	width: 80%;
 }
 
@@ -95,6 +95,7 @@ a.navLink:hover {
 	border-radius: 10px;
 	text-decoration:none;
 }
+
 
 a.blockName:hover {
 	animation-name: darken;
