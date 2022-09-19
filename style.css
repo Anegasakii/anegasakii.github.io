@@ -6,106 +6,109 @@
 }
 
 body {
-	background-color: var(--main);
-	font-family: Questrial, sans-serif;
 	margin: 88px 0px;
-	padding: 0;
+	color: white;
 }
 
-@keyframes lighten {
-	100% {
-		color: var(--darker);
-		background-color: var(--lighter);
-	}
+a {
+	text-decoration:none;
+	color: white;
 }
 
-@keyframes darken {
-	100% {
-		color: white;
-		background-color: var(--darker);
-	}
+a:hover, section > a:hover {
+	animation-name: borderToMain;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
 }
 
-@keyframes highlight {
-	100% {
-		box-shadow: 0px 0px 10px;
-	}
+h1, h2 {
+	display: inline;
+	margin: .5%;
 }
 
-.nav {
+h2 {
+	font-size: medium;
+	color: var(--lighter);
+}
+
+p {
+	font-size: medium;
+	margin: .1%;
+}
+p > a {
+	display: inline;
+	border: none;
+} 
+
+main {
+	display: grid;
+	margin: auto;
+	width: 80%;
+	grid-template-columns: auto auto;
+	grid-auto-rows: 1fr;
+	justify-content: center;
+	align-content: center;
+}
+
+main > a, .block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 1% auto;
+	width: 75%;
+	padding: .5% 2%;
+	border: 3px solid var(--lighter);
+}
+
+.block {
+	width: 60%;
+	background-color: var(--darkest);
+}
+
+section {
+	width: 70%;
+	margin: auto;
+	background-color: var(--darker);
+	padding: 1%;
+	border-radius: 5px;
+}
+
+section > a {
+	display: block;
+	text-align:center;
+	font-weight: bold;
+	font-size: xx-large;
+	border: 3px solid var(--darker);
+}
+
+header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+nav {
 	position: fixed;
 	background-color: var(--darker);
 	width: 100%;
 	padding: 10px 20px;
 	top: 0;
+	box-shadow: 0 0 10px var(--darkest);
 }
 
-.navLink {
+nav > a {
+	display: inline;
 	background-color: var(--darker);
-	color: white;
-	text-decoration:none;
 	font-weight: bold;
 	font-size: 200%;
-	padding: 5px 20px;
+	padding: 2px 20px;
 	margin: 5px;
-	border-radius: 10px;
+	border: 2px solid var(--darker);
 }
 
-a.navLink:hover {
-	animation-name: lighten;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
-}
-
-.block, .block2 {
-	width: 60%;
-	box-shadow: 0px 0px 5px;
-	background-color: var(--lighter);
-	color: var(--darker);
-	padding: 15px 10px 10px 10px;
-	margin: 30px auto 0px;
-	border-radius: 20px;
-	overflow:auto;
-}
-
-.block2 {
-	background-color: var(--darker);
-	color: white;
-}
-
-.block2 .block {
-	color: var(--darker);
-	width: 80%;
-}
-
-.block:hover, .block2:hover {
-	animation-name: highlight;
+nav > a:hover {
+	animation-name: borderToLight;
 	animation-duration: 0.25s;
-	animation-fill-mode: forwards;
-}
-
-.blockName, .blockName2 {
-	display: inline;
-	width: auto;
-	font-size: 200%;
-	padding: 5px 10px;
-	margin: 0px;
-	background-color: var(--main);
-	color: white;
-	border-radius: 10px;
-	text-decoration:none;
-}
-
-
-a.blockName:hover {
-	animation-name: darken;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
-}
-
-a.blockName2:hover, .jumpLink:hover, .jumpLink2:hover, .jumpHide:hover {
-	animation-name: lighten;
-	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
 
@@ -122,6 +125,7 @@ img {
 	top: 88px;
 	background-color: var(--darker);
 	border-radius: 10px;
+	box-shadow: 0 0 10px var(--darkest);
 	transition:         all 0.5s ease;
     -moz-transition:    all 0.5s ease;
     -ms-transition:     all 0.5s ease;
@@ -132,10 +136,10 @@ img {
 .jumpLink, .jumpLink2 {
 	display: block;
 	text-decoration: none;
-	padding: 5px;
+	padding: 2px 5px;
 	font-size: 120%;
-	color: white;
 	margin: 5px 15px;
+	border: 2px solid var(--darker);
 	border-radius: 5px;
 }
 
@@ -147,12 +151,13 @@ img {
 .jumpHide {
 	z-index: 2;
 	position: fixed;
-	left: 300px;
+	left: 305px;
 	display: block;
-	background-color: var(--darker);
+	margin: 0;
+	background-color: var(--main);
 	border: none;
 	height: 60px;
-	border-radius:10px;
+	border-radius: 10px;
 	transition:         all 0.5s ease;
     -moz-transition:    all 0.5s ease;
     -ms-transition:     all 0.5s ease;
@@ -167,6 +172,16 @@ img {
     -ms-transition:     all 0.5s ease;
     -o-transition:      all 0.5s ease;
     -webkit-transition: all 0.5s ease;
+}
+.jumpLink:hover, .jumpLink2:hover {
+	animation-name: borderToLight;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+.jumpHide:hover {
+	animation-name: fillToLight;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
 }
 
 .jumpHide img {
@@ -185,31 +200,46 @@ img {
 }
 
 .pfps {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto auto;
-	row-gap: 1vh;
-	justify-content: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.set {
+	display:flex;
+	flex-direction: column;
 	align-items: center;
 }
 
 .pfps img {
 	border-radius: 50%;
 	background-color: var(--main);
+	height: 150px;
+	margin: auto;
 }
 
 .pfps p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 35px;
 	background-color: var(--darker);
-	color: white;
-	font-size: 200%;
+	font-size: larger;
 	text-align: center;
-	margin: 5vh 2vw;
-	padding: 1vh 2vw;
+	border-radius: 5px;
+	width: 100%;
+	margin: 5% 2%;
+	padding: 2% 5%;
 	height: 40%;
+}
+
+p a {
+	color: var(--lighter);
+}
+
+p a:hover {
+	animation-name: textToMain;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
 }
 
 @media (max-width: 850px) {
@@ -220,5 +250,9 @@ img {
 	.pfps p {
 		margin: 1vh;
 		border-radius: 15px;
+	}
+
+	main {
+		display: block;
 	}
 }

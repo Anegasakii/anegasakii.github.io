@@ -8,11 +8,11 @@
 </head>
 
 <body>
-	<div class="nav">
-		<a class="navLink" href="index.html">Stuff</a>
-		<a class="navLink" href="anim.html">Animations</a>
-		<a class="navLink" href="about.html">About</a>
-	</div>
+	<nav>
+		<a href="index.html">Stuff</a>
+		<a href="art.html">Art</a>
+		<a href="about.html">About</a>
+	</nav>
 
 	<div class="jumpHidden" id="jump">
 		<button onclick="toggle()" class="jumpHide"><img src="up-down.svg"></button>
@@ -30,23 +30,27 @@
 	</div>
 
 	<div class="block">
-		<p class="blockName" id="lonkBirb">Lonk w/ Birb</p>
-		<p>2020-10-14</p>
+		<header>
+			<h1 id="lonkBirb">Lonk w/ Birb</h1>
+			<h2>2020-10-14</h2>
+		</header>
 		<img src="animations\lonk-birb-u-anegasaki.gif">
 	</div>
 
 	<div class="block">
-		<p class="blockName" id="bean">Among Us Bean Walk</p>
-		<p>2020-11-08</p>
+		<header>
+			<h1 id="bean">Among Us Bean Walk</h1>
+			<h2>2020-11-08</h2>
+		</header>
 		<img src="animations\anegasaki bean.gif">
 	</div>
-
-	<div class="block2">
-		<a class="blockName2" href="https://www.animatorisland.com/51-great-animation-exercises-to-master/" target="_blank" id="exercises">Animator Island's Exercises</a>
-		<p>My attempts at the exercises described in Animator Island</p>
+	<section>
+		<a href="https://www.animatorisland.com/51-great-animation-exercises-to-master/" target="_blank" id="exercises">Animator Island's Exercises</a>
 		<div class="block">
-			<p class="blockName" id="01">01 Ball bouncing in place</p>
-			<p>2020-09-06</p>
+			<header>
+				<h1 id="01">01 Ball bouncing in place</h1>
+				<h2>2020-09-06</h2>
+			</header>
 			<img src="animations\01-ball.gif">
 		</div>
 		<div class="block">
@@ -84,7 +88,7 @@
 			<p>2020-10-29</p>
 			<img src="animations\09-sack-jumping.gif">
 		</div>
-	</div>
+	</section>
 <script>
 	function toggle(){
 		jump = document.getElementById("jump")
