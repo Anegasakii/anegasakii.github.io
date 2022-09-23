@@ -9,6 +9,7 @@
 body {
 	background-color: var(--darkest);
 	font-family: Atkinson Hyperlegible, sans-serif;
+	margin: 1%;
 }
 
 footer { margin: .5%; }
@@ -30,13 +31,13 @@ button { border-color: var(--lighter); }
 
 footer a:hover {
 	animation-name: borderToLight;
-	animation-duration: 0.5s;
+	animation-duration: 0.25s;
 	animation-fill-mode: forwards;
 }
 
 button:hover {
 	animation-name: borderToMain;
-	animation-duration: 0.5s;
+	animation-duration: 0.25s;
 	animation-fill-mode: forwards;
 }
 
@@ -50,7 +51,7 @@ button:hover {
 @keyframes borderToMain {
 	100% {
 		border-color: var(--main);
-		border-radius: 15px;
+		border-radius: 10px;
 	}
 }
 
