@@ -6,7 +6,7 @@
 }
 
 body {
-	margin: 88px 0px;
+	margin: 70px 0px;
 	color: white;
 }
 
@@ -50,12 +50,12 @@ main {
 	align-content: center;
 }
 
-main > a, .block {
+main > a, .block, section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	margin: 1% auto;
-	width: 75%;
+	width: 80%;
 	padding: .5% 2%;
 	border: 3px solid var(--lighter);
 }
@@ -63,14 +63,6 @@ main > a, .block {
 .block {
 	width: 60%;
 	background-color: var(--darkest);
-}
-
-section {
-	width: 70%;
-	margin: auto;
-	background-color: var(--darker);
-	padding: 1%;
-	border-radius: 5px;
 }
 
 section > a {
@@ -94,6 +86,7 @@ nav {
 	padding: 10px 20px;
 	top: 0;
 	box-shadow: 0 0 10px var(--darkest);
+	z-index: 2;
 }
 
 nav > a {
@@ -242,6 +235,87 @@ p a:hover {
 	animation-fill-mode: forwards;
 }
 
+/*idk I thought a gallery kinda thing would be fun*/
+
+.galleries { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly;}
+
+.gallery {
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 0 2% 1%;
+	min-width: fit-content;
+}
+.gallery img {
+	width: auto;
+	height: 250px;
+	margin: 2px 8px;
+	object-fit: contain;
+}
+.gallery img, .thumbnails img { transition: filter 0.2s ease; }
+.gallery img:hover, .thumbnails img:hover { filter: brightness(1.1); }
+
+.gallery h1 { width: 100%; text-align: center; } 
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0; top: 59px;
+	padding-top: 16px;
+	width: 100%; height: 100%;
+	background-color: #000000DD;
+}
+
+.modal-content {
+	position: relative;
+	margin: auto;
+	width: 80%;
+}
+
+.modal-content img {
+	width: auto;
+	height: 50vh;
+	max-width: 50vw;
+	object-fit: contain;
+}
+
+.gallery img, .thumbnails img, button:hover { cursor: pointer; }
+
+.modal-slide {
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin: 16px auto;
+	flex-wrap: wrap;
+}
+
+.caption {
+	font-size: x-large;
+	width: 25%; 
+}
+.caption p { font-size: x-large;}
+.caption p:first-child { color: var(--lighter); }
+
+.thumbnails {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: auto;
+}
+.thumbnails img {
+	height: 20vh;
+	filter: brightness(0.5);
+	margin: 16px;
+}
+img.active { filter: none; }
+.modal-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @media (max-width: 850px) {
 	.pfps {
 		flex-direction: column;
@@ -250,4 +324,19 @@ p a:hover {
 	main {
 		display: block;
 	}
+}
+
+@media (max-width: 750px) {
+	.galleries { flex-direction: column; align-items: center; justify-content: center;}
+	.gallery { flex-direction: column; }
+	.gallery h1 { position: static; }
+	.gallery img { margin: 4px 0; }
+}
+
+@media (max-width: 500px) {
+	.modal-slide, .caption, .thumbnails { width: 100%; }
+	.modal-slide { flex-direction: column; }
+	.modal-slide img { width: 100%; height: auto; }
+	.caption { text-align: center; }
+	.thumbnails img { width: 40%; height: auto; }
 }

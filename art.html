@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Anegasaki</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8"/>
+	<script>
+		activeModal = "";
+
+		function openModal(selection) {
+			document.getElementById(selection).style.display = "block";
+			activeModal = selection;
+		}
+
+		function closeModal() {
+			document.getElementById(activeModal).style.display = "none";
+			activeModal = "";
+		}
+
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function modalNav(n) {
+			showSlides(slideIndex += n);
+		}
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			const container = document.getElementById(activeModal);
+			const slides = container.querySelectorAll(".modal-slide");
+			const thumbnails = container.querySelector(".thumbnails").children;
+			if (n > slides.length-1) {slideIndex = 0}
+			if (n < 0) {slideIndex = slides.length-1}
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+				thumbnails[i].classList.remove("active");
+			}
+			thumbnails[slideIndex].classList.add("active");
+			slides[slideIndex].style.display = "flex";
+		}
+	</script>
+</head>
+
+<body>
+	<nav>
+		<a href="index.html">Projects</a>
+		<a href="art.html">Art</a>
+		<a href="about.html">About</a>
+	</nav>
+	<main class="galleries">
+		<section class="gallery">
+			<h1>Photography</h1>
+			<img src="art/photos/IMG_7045.jpg" onclick="openModal('photos');currentSlide(0);">
+			<img src="art/photos/IMG_7011.jpg" onclick="openModal('photos');currentSlide(1);">
+			<img src="art/photos/IMG_8371.jpg" onclick="openModal('photos');currentSlide(2);">
+			<img src="art/photos/IMG_8455.jpg" onclick="openModal('photos');currentSlide(3)">
+		</section>
+<!--			<section class="gallery">
+			<h1>placeholder</h1>
+			<img src="" onclick="openModal('');currentSlide(0);">
+			<img src="" onclick="openModal('');currentSlide(1)">
+		</section> -->
+	</main>
+	<div id="photos" class="modal">
+		<div class="modal-content">
+			<div class="modal-slide">
+				<img src="art/photos/IMG_7045.jpg">
+				<div class="caption"><p>2023.10.10</p>
+				<p>Sun shining through leaves</p></div>
+			</div>
+			<div class="modal-slide">
+				<img src="art/photos/IMG_7011.jpg">
+				<div class="caption"><p>2023.10.10</p>
+				<p>Sun shining through clouds</p></div>
+			</div>
+			<div class="modal-slide">
+				<img src="art/photos/IMG_8371.jpg">
+				<div class="caption"><p>2023.11.30</p>
+				<p>A drooping branch on campus</p></div>
+			</div>
+			<div class="modal-slide">
+				<img src="art/photos/IMG_8455.jpg">
+				<div class="caption"><p>2023.12.04</p>
+				<p>A small plant with a setting sun at Lake Conestee</p></div>
+			</div>
+			<div class="modal-buttons">
+				<button class="prev" title="Previous" onclick="modalNav(-1)"><</button>
+				<button class="next" title="Next" onclick="modalNav(1)">></button>
+				<button onclick="closeModal()" title="Close">⨉</button>
+			</div>
+			<div class="thumbnails">
+				<img src="art/photos/IMG_7045.jpg" onclick="currentSlide(0)">
+				<img src="art/photos/IMG_7011.jpg" onclick="currentSlide(1)">
+				<img src="art/photos/IMG_8371.jpg" onclick="currentSlide(2)">
+				<img src="art/photos/IMG_8455.jpg" onclick="currentSlide(3)">
+			</div>
+		</div>
+	</div>
+<!--	<div id="placeholder" class="modal">
+		<div class="modal-content">
+			<div class="modal-slide">
+				<img src="">
+				<p class="caption"></p>
+			</div>
+			<div class="modal-slide">
+				<img src="">
+				<div class="caption"><p>
+				</p></div>
+			</div>
+			<div class="modal-buttons">
+				<button class="prev" title="Previous" onclick="modalNav(-1)"><</button>
+				<button class="next" title="Next" onclick="modalNav(1)">></button>
+				<button onclick="closeModal()" title="Close">⨉</button>
+			</div>
+			<div class="thumbnails">
+				<img src="" onclick="currentSlide(0);">
+				<img src="" onclick="currentSlide(1)">
+			</div>
+		</div>
+	</div> -->
+</body>
+</html>
